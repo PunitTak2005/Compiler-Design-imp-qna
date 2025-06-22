@@ -1,0 +1,33 @@
+## ⚖️ Difference Between Compiler and Interpreter
+
+Both **compiler** and **interpreter** are language translators that convert high-level programming code into a form that machines can understand. However, they differ in how and when they perform the translation.
+
+---
+
+### 📘 **Compiler vs Interpreter – Key Differences:**
+
+| Feature                | **Compiler**                                   | **Interpreter**                                          |
+| ---------------------- | ---------------------------------------------- | -------------------------------------------------------- |
+| **Translation Method** | Translates the **entire program at once**      | Translates **line-by-line or statement-by-statement**    |
+| **Speed of Execution** | **Faster** (after compilation)                 | **Slower**, as it translates and executes simultaneously |
+| **Error Handling**     | Shows **all errors after compilation**         | Stops at **first error** and reports immediately         |
+| **Output**             | Generates a **separate executable file**       | **No separate file**; executes directly                  |
+| **Example Languages**  | C, C++, Java (compiled to bytecode)            | Python, JavaScript, PHP                                  |
+| **Memory Usage**       | Generally **more**, as entire code is compiled | Uses **less**, as it processes one line at a time        |
+| **Usage**              | Suitable for **large programs**                | Ideal for **scripting and rapid development**            |
+
+---
+
+### 🧠 **In Simple Words:**
+
+* A **compiler** translates the whole book (code) at once and then lets you read it (execute).
+* An **interpreter** reads and explains each line as you go.
+
+---
+
+### 🔄 **Real-World Analogy:**
+
+* **Compiler**: Like translating an entire novel into another language before reading it.
+* **Interpreter**: Like having a translator read and translate each sentence aloud to you.
+
+---
