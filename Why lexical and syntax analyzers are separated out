@@ -1,0 +1,68 @@
+The **lexical analyzer** and **syntax analyzer** are separated in a compiler design for several important reasons related to **modularity, efficiency, and simplicity**. Here's a detailed explanation:
+
+---
+
+## 🔍 2. Why Lexical and Syntax Analyzers Are Separated Out
+
+---
+
+### 1. **Simplification of Compiler Design**
+
+* **Lexical analyzer (lexer)** deals with recognizing **tokens** (keywords, identifiers, numbers, operators).
+* **Syntax analyzer (parser)** deals with **structure**, i.e., how tokens form valid statements.
+* Separating them allows each to focus on its specific job, making implementation and debugging easier.
+
+---
+
+### 2. **Improved Efficiency**
+
+* The lexer can be implemented using **finite automata**, which is fast and efficient for token recognition.
+* By removing whitespace, comments, and irrelevant characters early, the parser deals only with meaningful tokens.
+
+---
+
+### 3. **Reusability**
+
+* The lexer can be reused across multiple parsers or tools like interpreters, formatters, etc.
+* Example: A lexer for C can be reused in a C interpreter or static analyzer.
+
+---
+
+### 4. **Modularity and Maintainability**
+
+* Lexer and parser are often developed, tested, and optimized independently.
+* Changes in token structure (e.g., new keywords) can be handled in the lexer without touching the parser.
+
+---
+
+### 5. **Error Detection and Recovery**
+
+* Lexers can catch **lexical errors** early (like invalid symbols).
+* Parsers can focus on **syntax errors** (like mismatched parentheses or misplaced tokens).
+
+---
+
+### 6. **Support for Parser Generators**
+
+* Tools like **Lex/Yacc** or **Flex/Bison** are based on this separation:
+
+  * Lex generates lexical analyzers.
+  * Yacc/Bison generates parsers.
+* This separation simplifies automation of parser construction.
+
+---
+
+### 7. **Language Independence**
+
+* A lexer can be used for multiple languages with different grammar but similar token patterns (e.g., identifier rules).
+
+---
+
+### 🧠 In Simple Words:
+
+> **Lexical analyzer** answers *“What are the words?”*
+> **Syntax analyzer** answers *“Are the words in the correct order?”*
+
+---
+
+
