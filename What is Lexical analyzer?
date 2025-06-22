@@ -1,4 +1,4 @@
-## 🔍 4. What is a Lexical Analyzer?
+## 🔍 . What is a Lexical Analyzer?
 
 A **Lexical Analyzer** (also called a **lexer** or **scanner**) is the **first phase of a compiler**.
 It reads the source code as a sequence of characters and **converts it into a sequence of tokens**.
