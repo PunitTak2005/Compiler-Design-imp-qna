@@ -1,4 +1,4 @@
-## 🛠️ 5. What is Intermediate Code?
+## 🛠️  What is Intermediate Code?
 
 **Intermediate code** is a type of **code generated between the source code and machine code** during the compilation process. It is **not specific to any machine or CPU architecture**, but it is closer to machine code than the high-level source code.
 
