@@ -1,0 +1,53 @@
+## 🧠  What is Bootstrapping in Compiler Design?
+
+---
+
+### 📘 **Definition:**
+
+> **Bootstrapping** is the process of **writing a compiler in the source programming language that it is intended to compile**. It refers to **using a simpler version of a compiler to build a more advanced version of itself**.
+
+---
+
+### 🧩 **Why is Bootstrapping Needed?**
+
+* To create a **self-sustaining compiler**.
+* To **improve** an existing compiler or **port** it to a new platform.
+* To help in **developing compilers for new programming languages**.
+
+---
+
+### 🔄 **How Bootstrapping Works (Step-by-Step):**
+
+1. **Write a simple compiler (C₀)** for Language L in another language (e.g., Assembly).
+2. **Use C₀** to write a more advanced compiler (C₁) for Language L in Language L itself.
+3. **Use C₀ to compile C₁**, producing an executable.
+4. Now use the compiled C₁ to compile more versions of itself or other programs.
+
+---
+
+### 🛠️ **Example:**
+
+Imagine you're building a compiler for a new language called `MyLang`.
+
+* You first write a **basic compiler for MyLang in C** (let’s call it C₀).
+* Then you **rewrite the compiler in MyLang itself** (now it’s C₁).
+* Use C₀ to compile C₁.
+* Now, C₁ can be used to **compile future versions of itself**, or any program written in MyLang.
+
+---
+
+### ✅ **Advantages of Bootstrapping:**
+
+* Proves the **language is powerful enough** to implement its own compiler.
+* Allows **rapid development** and **portability**.
+* Helps in **self-improvement** of compilers over time.
+
+---
+
+### 🧠 **In Simple Words:**
+
+> Bootstrapping is like teaching a programming language to **build its own tools** — a compiler that can compile itself!
+
+---
+
+
