@@ -1,0 +1,58 @@
+## 🧩  What is a Token?
+
+---
+
+### 📘 **Definition:**
+
+> A **token** is the **smallest meaningful unit** in a programming language, identified during the **lexical analysis** phase of compilation.
+
+Tokens are produced by the **lexical analyzer (lexer)** and sent to the **syntax analyzer (parser)**.
+
+---
+
+### 🧱 **In Simple Words:**
+
+> A **token** is like a "word" in a programming language — something that carries meaning (like a keyword, identifier, or symbol).
+
+---
+
+### 🔖 **Types of Tokens:**
+
+| Token Type     | Description                         | Example                 |
+| -------------- | ----------------------------------- | ----------------------- |
+| **Keyword**    | Reserved words of the language      | `if`, `while`, `return` |
+| **Identifier** | Names given to variables/functions  | `x`, `sum`, `count`     |
+| **Operator**   | Symbols for operations              | `+`, `-`, `*`, `=`      |
+| **Literal**    | Constant values                     | `10`, `'A'`, `3.14`     |
+| **Separator**  | Punctuation used to separate tokens | `;`, `,`, `()`          |
+
+---
+
+### 🔄 **Example:**
+
+For this line of code:
+
+```c
+int x = 10 + y;
+```
+
+The tokens are:
+
+* `int` → Keyword
+* `x` → Identifier
+* `=` → Operator
+* `10` → Literal
+* `+` → Operator
+* `y` → Identifier
+* `;` → Separator
+
+---
+
+### 🎯 **Purpose of Tokens:**
+
+* They help the parser understand **structure and meaning**.
+* Makes analysis and translation **easier and modular**.
+
+---
+
+Let me know if you'd like a diagram showing the tokenization process!
