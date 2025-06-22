@@ -1,0 +1,63 @@
+Parsing, in the context of computer science and compilers, refers to analyzing a string of symbols (usually source code) according to the rules of a formal grammar. Some **basic issues in parsing** include:
+
+---
+
+### 1. **Ambiguity**
+
+* A grammar is ambiguous if a single string can have more than one parse tree.
+* **Issue**: Makes it hard to determine the correct meaning of a statement.
+* **Example**: Classic "dangling else" problem in `if-else` statements.
+
+---
+
+### 2. **Left Recursion**
+
+* When a non-terminal calls itself on the left side of a production rule.
+* **Issue**: Causes infinite recursion in top-down parsers.
+* **Solution**: Remove left recursion or use bottom-up parsers like LR.
+
+---
+
+### 3. **Backtracking**
+
+* Some parsers try multiple alternatives until one succeeds.
+* **Issue**: Can be inefficient and may lead to exponential time complexity.
+* **Solution**: Use predictive parsers with lookahead or use memoization.
+
+---
+
+### 4. **Error Handling**
+
+* Detecting and recovering from syntactic errors gracefully.
+* **Issue**: Poor error handling can make debugging very hard for programmers.
+* **Goal**: Provide meaningful error messages and recover to continue parsing.
+
+---
+
+### 5. **Tokenization Dependency**
+
+* Parsing depends on correct lexical analysis (token generation).
+* **Issue**: Incorrect tokens from the lexer can break the parser.
+
+---
+
+### 6. **Grammar Conflicts**
+
+* Especially in bottom-up parsers like LR: **Shift/Reduce** and **Reduce/Reduce** conflicts.
+* **Issue**: Makes the parser construction difficult or impossible without grammar refactoring.
+
+---
+
+### 7. **Complexity of Grammar**
+
+* Grammars with lots of rules or non-standard constructs are harder to parse.
+* **Issue**: Makes parser generation and maintenance challenging.
+
+---
+
+### 8. **Context Sensitivity**
+
+* Parsing context-free languages is easy; context-sensitive features (like variable scope or type matching) cannot be handled by pure parsing.
+* **Issue**: Parser alone can’t fully understand certain constructs; semantic analysis is needed.
+
+---
