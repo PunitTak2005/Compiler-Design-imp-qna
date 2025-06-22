@@ -1,4 +1,4 @@
-## 💾 6. What is Input Buffering?
+## 💾 . What is Input Buffering?
 
 **Input buffering** is a technique used in the **lexical analysis phase** of a compiler to **speed up reading characters** from the source code file.
 Instead of reading one character at a time from disk (which is slow), the input is **loaded in blocks (buffers)** into memory for efficient access.
