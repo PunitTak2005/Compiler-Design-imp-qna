@@ -1,0 +1,141 @@
+## 🧠  All Phases of Compiler Explained with Example
+
+A **compiler** translates high-level source code into machine code through multiple **systematic phases**. Each phase has a specific role in ensuring correct and efficient translation.
+
+---
+
+## 📚 **All Phases of Compiler**
+
+Let’s consider a sample statement:
+
+```c
+int x = a + b * 2;
+```
+
+We’ll walk through how this line is processed through each phase.
+
+---
+
+### 🔹 1. **Lexical Analysis (Scanning)**
+
+**Task:** Breaks source code into **tokens**
+**Tool:** Lexical Analyzer (e.g., Lex)
+
+🧪 **Output Tokens:**
+
+* `int` → Keyword
+* `x` → Identifier
+* `=` → Assignment Operator
+* `a`, `b` → Identifiers
+* `+`, `*` → Operators
+* `2` → Constant
+* `;` → Delimiter
+
+🧠 This phase also creates the **symbol table** and ignores comments/whitespace.
+
+---
+
+### 🔹 2. **Syntax Analysis (Parsing)**
+
+**Task:** Check grammatical structure using **CFG** (Context-Free Grammar)
+**Tool:** Parser (e.g., YACC)
+
+🧪 **Output:** **Parse Tree / Syntax Tree**
+For `a + b * 2`, parser ensures correct operator precedence:
+
+```
+     =
+   /   \
+  x     +
+       / \
+      a   *
+         / \
+        b   2
+```
+
+---
+
+### 🔹 3. **Semantic Analysis**
+
+**Task:** Check for **meaning**, ensure type consistency, and variable declaration.
+**Error Check:** Is `a` and `b` declared? Is `int = float + string`?
+
+🧪 **Output:** **Annotated Syntax Tree + Symbol Table**
+
+---
+
+### 🔹 4. **Intermediate Code Generation (ICG)**
+
+**Task:** Generate a language-independent code called **Intermediate Representation (IR)**
+
+🧪 **Output (Three Address Code):**
+
+```
+T1 = b * 2
+T2 = a + T1
+x = T2
+```
+
+---
+
+### 🔹 5. **Code Optimization**
+
+**Task:** Improve performance by removing redundancy or simplifying expressions.
+
+🧪 **Example Optimizations:**
+
+* If `b = 3`, replace `b * 2` with `6`
+* Remove unused variables
+
+Optimized:
+
+```
+T1 = a + (b * 2)
+x = T1
+```
+
+---
+
+### 🔹 6. **Code Generation**
+
+**Task:** Convert IR into **target machine code or assembly**
+
+🧪 **Output:**
+
+```asm
+MOV R1, b
+MUL R1, 2
+ADD R1, a
+MOV x, R1
+```
+
+---
+
+### 🔹 7. **Code Linking and Assembly**
+
+**Task:** Link object files, resolve function/library references
+**Output:** Final **executable (.exe)** file
+
+---
+
+## ✅ **Summary Table**
+
+| Phase              | Description                            | Output                        |
+| ------------------ | -------------------------------------- | ----------------------------- |
+| Lexical Analysis   | Tokenizes input                        | Tokens                        |
+| Syntax Analysis    | Checks structure                       | Parse Tree                    |
+| Semantic Analysis  | Ensures meaning and type correctness   | Annotated Tree + Symbol Table |
+| Intermediate Code  | Platform-independent code              | 3-Address Code or IR          |
+| Code Optimization  | Improves code                          | Optimized IR                  |
+| Code Generation    | Generates target machine/assembly code | Assembly or Machine Code      |
+| Linking & Assembly | Combines code with libraries           | Executable File               |
+
+---
+
+### 🧠 In Simple Words:
+
+> A compiler is like a **7-step translation pipeline**:
+> From understanding the words (**tokens**) → to grammar (**syntax**) → to meaning (**semantics**) → to a smart plan (**optimization**) → to final instructions (**machine code**).
+
+---
+
