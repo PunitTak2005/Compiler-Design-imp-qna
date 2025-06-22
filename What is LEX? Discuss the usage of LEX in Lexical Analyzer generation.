@@ -1,0 +1,108 @@
+
+
+### 📘 **Definition:**
+
+> **LEX** is a **lexical analyzer generator tool** used in compiler design. It automatically **generates source code for a lexical analyzer (also called a scanner)** from a set of regular expressions that define token patterns.
+
+* The generated scanner reads input and **identifies tokens** like keywords, identifiers, numbers, etc.
+* It is often used with **YACC**, which handles syntax analysis.
+
+---
+
+### 🎯 **Purpose of LEX:**
+
+* Automate the creation of a **lexical analyzer**.
+* Save time writing complex code for tokenizing input.
+* Seamlessly integrate with parsers for a complete front-end of a compiler.
+
+---
+
+## 🧩 **Structure of a LEX Program**
+
+A LEX file (`file.l`) has **three main sections**, separated by `%%`:
+
+```lex
+%{
+/* C declarations */
+%}
+
+%%
+
+pattern1   action1
+pattern2   action2
+...
+
+%%
+
+int main() {
+    yylex();  // Starts the scanner
+}
+```
+
+---
+
+## ⚙️ **Working of LEX:**
+
+1. **Define Tokens as Regular Expressions**
+
+   * Example: `if` → keyword, `[a-zA-Z_][a-zA-Z0-9_]*` → identifier
+
+2. **Write Actions in C Code**
+
+   * These are executed when a pattern matches.
+
+3. **Run LEX**
+
+   * It generates a C file (typically `lex.yy.c`) containing the `yylex()` function.
+
+4. **Compile with C Compiler**
+
+   * Compile `lex.yy.c` to get the final executable scanner.
+
+5. **Run the Scanner**
+
+   * Feed it source code; it breaks it into tokens and executes corresponding actions.
+
+---
+
+## 🧪 **Example: LEX Program**
+
+```lex
+%{
+#include <stdio.h>
+%}
+
+%%
+"if"        { printf("KEYWORD: if\n"); }
+[0-9]+      { printf("NUMBER: %s\n", yytext); }
+[a-zA-Z_][a-zA-Z0-9_]* { printf("IDENTIFIER: %s\n", yytext); }
+\n          { /* ignore newline */ }
+.           { printf("UNKNOWN: %s\n", yytext); }
+%%
+
+int main() {
+    yylex();
+    return 0;
+}
+```
+
+---
+
+## ✅ **Advantages of LEX:**
+
+| Benefit                       | Description                                      |
+| ----------------------------- | ------------------------------------------------ |
+| **Automatic Code Generation** | Saves time and effort in writing scanners        |
+| **Regular Expression Based**  | Easy to define complex patterns cleanly          |
+| **Efficient**                 | Produces optimized scanning code                 |
+| **Integration with YACC**     | Seamlessly works with YACC for parser generation |
+
+---
+
+### 🧠 **In Simple Words:**
+
+> **LEX** is like a **token scanner factory**. You give it the rules (patterns), and it builds you a machine (scanner) that reads your code and splits it into tokens automatically.
+
+---
+
+
