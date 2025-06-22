@@ -1,0 +1,99 @@
+## 📘  What is a Symbol Table? How Are Names Stored in It?
+
+---
+
+### 🧠 **Definition:**
+
+> A **symbol table** is a **data structure used by a compiler** to store information about **identifiers (names)** used in the source code—such as variable names, function names, class names, etc.
+
+It is **created and maintained** during the **semantic analysis** phase and is crucial for **type checking**, **scope resolution**, and **code generation**.
+
+---
+
+### 📚 **What Information Does It Store?**
+
+| Field          | Description                                 |
+| -------------- | ------------------------------------------- |
+| Name           | The identifier (e.g., `x`, `sum`, `main`)   |
+| Type           | Data type (e.g., `int`, `float`, `char`)    |
+| Scope          | Where the variable is valid (global/local)  |
+| Memory Address | Address allocated during code generation    |
+| Size           | Size in bytes                               |
+| Parameters     | For functions: number and type of arguments |
+
+---
+
+### 🧩 **Example Entry:**
+
+| Name | Type | Scope | Address | Size |
+| ---- | ---- | ----- | ------- | ---- |
+| `x`  | int  | local | 1000    | 4    |
+
+---
+
+## 🔧 Procedure to Store Names in a Symbol Table
+
+---
+
+### ✅ Step-by-Step Algorithm:
+
+#### 1. **Lexical Analyzer detects an identifier**
+
+* While scanning the code, it finds a name like `x`.
+
+#### 2. **Search the Symbol Table**
+
+* Check if the identifier already exists (to prevent duplicates).
+
+#### 3. **Insert if Not Found**
+
+* If it doesn't exist, insert the identifier with:
+
+  * Its name
+  * Type (if available at this stage)
+  * Scope (global/local)
+  * Line number or memory location
+  * Any additional attributes
+
+#### 4. **Return Reference**
+
+* Return a pointer or index to that symbol table entry (used in later phases).
+
+---
+
+### 📋 **Pseudocode:**
+
+```c
+procedure insert_symbol(name, type, scope):
+    if not lookup(name, scope):
+        entry = create_entry(name, type, scope)
+        symbol_table.add(entry)
+    else:
+        report("Duplicate declaration")
+
+procedure lookup(name, scope):
+    for entry in symbol_table:
+        if entry.name == name and entry.scope == scope:
+            return entry
+    return NULL
+```
+
+---
+
+### 💡 **Data Structures Used for Symbol Tables:**
+
+| Data Structure     | Benefit                                |
+| ------------------ | -------------------------------------- |
+| **Hash Table**     | Fast lookup and insertion (O(1))       |
+| **Tree (BST/AVL)** | Maintains order, good for large scopes |
+| **Linked List**    | Simple but slow for large programs     |
+
+---
+
+### 🧠 **In Simple Words:**
+
+> A **symbol table** is like a compiler’s notebook where it writes down every variable and function it encounters, along with useful details like type, scope, and where it lives in memory.
+
+---
+
+Let me know if you’d like C or Python code to implement a basic symbol table!
