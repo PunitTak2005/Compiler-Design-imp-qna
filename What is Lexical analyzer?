@@ -1,0 +1,63 @@
+## 🔍 4. What is a Lexical Analyzer?
+
+A **Lexical Analyzer** (also called a **lexer** or **scanner**) is the **first phase of a compiler**.
+It reads the source code as a sequence of characters and **converts it into a sequence of tokens**.
+
+---
+
+### 📘 **Definition:**
+
+> A **lexical analyzer** is a program that scans the source code, identifies meaningful words (tokens), and passes them to the syntax analyzer for further processing.
+
+---
+
+### 🧩 **Functions of a Lexical Analyzer:**
+
+1. **Token Generation**
+   Converts character sequences into tokens (like keywords, identifiers, operators).
+
+2. **Removing Whitespaces and Comments**
+   Ignores unnecessary parts of the code.
+
+3. **Lexical Error Detection**
+   Identifies invalid or unknown symbols.
+
+4. **Symbol Table Management**
+   Adds identifiers and literals to the symbol table.
+
+---
+
+### 🧠 **What are Tokens?**
+
+Tokens are the smallest units of meaning in programming, such as:
+
+| Code Piece | Token Type |
+| ---------- | ---------- |
+| `int`      | Keyword    |
+| `x`        | Identifier |
+| `=`        | Operator   |
+| `100`      | Constant   |
+| `;`        | Separator  |
+
+---
+
+### 🔄 **Example:**
+
+For this code:
+
+```c
+int x = 100;
+```
+
+The lexical analyzer outputs tokens:
+→ `[int] [x] [=] [100] [;]`
+
+---
+
+### 🎯 **Purpose:**
+
+> To simplify and clean up the input for the next phase (syntax analyzer) by turning raw characters into structured tokens.
+
+---
+
+
