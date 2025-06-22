@@ -1,0 +1,76 @@
+## 🔍 Scanning: Task, Difficulties & Solutions
+
+---
+
+### 📘 **What is the Basic Task of Scanning?**
+
+> **Scanning**, also known as **lexical analysis**, is the **first phase of compilation**.
+> Its main task is to **read the source code character by character** and convert it into a stream of **tokens** (like keywords, identifiers, operators, etc.).
+
+---
+
+### ✅ **Basic Tasks of Scanning:**
+
+1. **Token Recognition**
+   → Identify valid tokens (keywords, numbers, identifiers, etc.)
+
+2. **Skipping Whitespaces and Comments**
+   → Ignore characters that are not meaningful for parsing.
+
+3. **Lexical Error Detection**
+   → Catch invalid characters or malformed tokens.
+
+4. **Symbol Table Management**
+   → Add new identifiers or constants to the symbol table.
+
+---
+
+### 🚧 **Difficulties in Delimiter-Oriented Scanning:**
+
+> **Delimiter-oriented scanning** means recognizing tokens **based on special characters** (like spaces, commas, semicolons, etc.).
+
+#### ⚠️ Common Difficulties:
+
+| Difficulty                  | Example           | Explanation                                                         |
+| --------------------------- | ----------------- | ------------------------------------------------------------------- |
+| **No Space Between Tokens** | `intx=10;`        | Scanner may see `intx` instead of `int` and `x`                     |
+| **Ambiguous Delimiters**    | `a+++b`           | Is this `a++ + b` or `a + ++b`?                                     |
+| **Embedded Delimiters**     | `a[10]`           | Square brackets may be part of an array index, not a separate token |
+| **Multi-character Tokens**  | `==`, `<=`        | Need lookahead to differentiate from `=` or `<`                     |
+| **String Literals**         | `"Hello, World!"` | Commas and spaces inside quotes shouldn't be treated as delimiters  |
+
+---
+
+### ✅ **How to Overcome These Difficulties:**
+
+1. **Use Finite Automata (FA) or Lexical Rules**
+
+   * Automates recognition of patterns.
+   * Handles lookahead and multi-character tokens efficiently.
+
+2. **Use Lookahead Mechanisms**
+
+   * Allow the scanner to look at the next character before deciding.
+
+3. **Backtracking or Buffering**
+
+   * Store characters in buffers so that part of input can be "un-read" if needed.
+
+4. **Use Lexical Analyzer Generators (e.g., Lex/Flex)**
+
+   * These tools use regular expressions to match patterns and resolve ambiguity.
+
+5. **Define Clear Token Rules in Grammar**
+
+   * Specify how to handle overlapping and compound tokens.
+
+---
+
+### 🧠 **In Simple Words:**
+
+> Scanning is like reading a sentence and recognizing **each word**, even when there are **no spaces or punctuation to help**.
+> We solve this by using **automated pattern matching** tools and techniques like **lookahead and backtracking**.
+
+---
+
+Let me know if you'd like examples of how Lex handles these issues!
