@@ -1,0 +1,116 @@
+## 🧩  Compiler Phases Explained (with Example)
+
+A **compiler** works in multiple **phases**, each handling a specific task to transform **source code** into **machine code (or another target form)**.
+
+---
+
+### ✅ **Phases of a Compiler (in order):**
+
+---
+
+### 1. **Lexical Analysis (Scanner)**
+
+🔹 **Job**: Breaks source code into tokens.
+🔹 **Tool**: Lexer (can be built with tools like **Lex**)
+🔹 **Input**: Raw source code
+🔹 **Output**: Stream of tokens
+
+🧪 **Example**
+For code: `int x = 10;`
+→ Tokens: `int`, `x`, `=`, `10`, `;`
+
+---
+
+### 2. **Syntax Analysis (Parser)**
+
+🔹 **Job**: Checks grammatical structure using context-free grammar.
+🔹 **Tool**: Parser (can be built with **YACC**)
+🔹 **Input**: Tokens
+🔹 **Output**: Parse Tree or Syntax Tree
+
+🧪 **Example**
+Verifies:
+
+```c
+if (x > 0) { x++; }
+```
+
+has proper `if`, condition, and block syntax.
+
+---
+
+### 3. **Semantic Analysis**
+
+🔹 **Job**: Ensures the meaning is correct—types, declarations, etc.
+🔹 **Input**: Parse Tree
+🔹 **Output**: Annotated Syntax Tree / Symbol Table
+
+🧪 **Example**
+Checks that `x` is declared before use, or that you’re not assigning a `float` to a `char`.
+
+---
+
+### 4. **Intermediate Code Generation**
+
+🔹 **Job**: Converts code into a platform-independent intermediate representation.
+🔹 **Output**: Intermediate Code (e.g., Three Address Code, Bytecode)
+
+🧪 **Example**
+From `a = b + c` →
+`T1 = b + c`
+`a = T1`
+
+---
+
+### 5. **Code Optimization**
+
+🔹 **Job**: Improves the intermediate code to make it **faster or smaller**.
+🔹 **Output**: Optimized Intermediate Code
+
+🧪 **Example**
+If `x = 2 * 3;` → Optimize to `x = 6;`
+
+---
+
+### 6. **Target Code Generation**
+
+🔹 **Job**: Converts optimized code to **machine code** or **assembly**.
+🔹 **Output**: Target code (object code or binary)
+
+🧪 **Example**
+Generates x86 assembly or binary instructions from intermediate code.
+
+---
+
+### 7. **Code Linking & Assembly (Optional)**
+
+🔹 **Job**: Combines all object files, libraries, and resolves addresses.
+🔹 **Output**: Final Executable Program
+
+🧪 **Example**
+Combines your code with `stdio.h` functions like `printf`.
+
+---
+
+## 🧠 **Visual Summary:**
+
+```
+Source Code
+   ↓
+Lexical Analysis → Tokens
+   ↓
+Syntax Analysis → Parse Tree
+   ↓
+Semantic Analysis → Annotated Tree + Symbol Table
+   ↓
+Intermediate Code Generation → IR (Intermediate Representation)
+   ↓
+Optimization → Optimized IR
+   ↓
+Target Code Generation → Machine Code
+   ↓
+Linker & Assembler → Executable File
+```
+
+---
+
