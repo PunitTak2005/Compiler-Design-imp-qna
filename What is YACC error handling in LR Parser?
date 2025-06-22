@@ -1,0 +1,54 @@
+## ⚠️ 7. What is YACC Error Handling in LR Parser?
+
+**YACC** (Yet Another Compiler Compiler) is a parser generator that creates an **LR parser** for a given grammar.
+**Error handling** in YACC allows the parser to **recover gracefully from syntax errors** instead of stopping immediately.
+
+---
+
+### 📘 **Definition:**
+
+> **YACC error handling** is a mechanism used within an LR parser to **detect, report, and recover** from syntax errors during parsing, using a special keyword: `error`.
+
+---
+
+### 🧩 **How Error Handling Works in YACC:**
+
+#### 🔹 1. **`error` Token**
+
+* A **special built-in token** in YACC used in grammar rules to define **where and how to recover** from syntax errors.
+
+#### 🔹 2. **Syntax for Using `error`:**
+
+```yacc
+statement: error ';' { printf("Syntax error recovered at ';'\n"); };
+```
+
+* This tells the parser:
+  → If a syntax error is detected in a `statement`, skip tokens until `;` is found.
+
+---
+
+### 🔄 **Steps in Error Recovery:**
+
+1. **Detect the error**: Parser fails to match input with expected rules.
+2. **Pop stack**: It pops symbols from the parse stack until it finds a state where the `error` token is valid.
+3. **Discard input tokens**: It discards tokens from the input until it finds a synchronizing token (like `;` or `}`).
+4. **Resume parsing**: After matching the rule with `error`, parsing continues.
+
+---
+
+### ✅ **Advantages of YACC Error Handling:**
+
+* **Custom recovery** rules.
+* **Continue parsing** after an error to find more issues.
+* **Clear messages** for the user about the location and type of error.
+
+---
+
+### 🧠 **In Simple Words:**
+
+> YACC’s error handling lets your parser **catch syntax errors** and **recover** from them using the `error` keyword, so your compiler doesn’t crash at the first mistake.
+
+---
+
+
