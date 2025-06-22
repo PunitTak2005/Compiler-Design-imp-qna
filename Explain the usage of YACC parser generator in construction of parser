@@ -1,0 +1,95 @@
+## 🛠️ . Usage of YACC Parser Generator in Construction of Parser
+
+---
+
+### 📘 **What is YACC?**
+
+> **YACC** stands for **Yet Another Compiler Compiler**.
+> It is a **parser generator tool** used to create the **syntax analyzer (parser)** for a programming language from a given **context-free grammar**.
+
+---
+
+### 🎯 **Purpose of YACC:**
+
+To **automatically generate the source code** for a parser (usually an **LR parser**) based on the grammar rules of a language.
+
+---
+
+### 🧩 **How YACC Works in Parser Construction:**
+
+#### ✅ 1. **Grammar Specification**
+
+* You write grammar rules using **BNF-like syntax** in a `.y` file.
+* These rules describe the **syntactic structure** of the language.
+
+#### ✅ 2. **Token Definitions**
+
+* Tokens are defined in a separate **lexical analyzer** (often using `LEX`).
+* The lexer passes tokens to YACC with associated values.
+
+#### ✅ 3. **YACC Generates a Parser**
+
+* YACC reads the grammar and produces a **C program** (`y.tab.c`) that acts as a parser.
+* The parser uses **LALR(1)** parsing tables and a **shift-reduce** mechanism.
+
+#### ✅ 4. **Action Code**
+
+* You can insert **C code in braces `{}`** with grammar rules to specify **what actions to perform** (e.g., build ASTs, print messages, calculate values).
+
+---
+
+### 📂 **Structure of a YACC File:**
+
+```yacc
+%{
+/* C declarations */
+%}
+
+%token NUMBER PLUS MINUS
+
+%%
+
+expression:
+      expression PLUS term   { $$ = $1 + $3; }
+    | expression MINUS term  { $$ = $1 - $3; }
+    | term
+    ;
+
+term:
+      NUMBER                 { $$ = $1; }
+    ;
+
+%%
+
+main() {
+    yyparse();  // calls the parser
+}
+```
+
+---
+
+### 🔄 **Integration with Lex:**
+
+* **LEX** handles tokenization.
+* **YACC** handles parsing.
+* Together they form a **front-end** of a compiler.
+
+---
+
+### ✅ **Advantages of Using YACC:**
+
+| Feature                 | Benefit                                            |
+| ----------------------- | -------------------------------------------------- |
+| Automates parsing       | No need to write complex parser manually           |
+| Handles LALR(1)         | Supports more powerful grammars                    |
+| Supports error handling | Allows recovery from syntax errors                 |
+| Works with Lex          | Seamless integration for lexical + syntax analysis |
+
+---
+
+### 🧠 **In Simple Words:**
+
+> YACC is a tool that **generates a parser for your language**, using grammar rules you write. It takes care of the hard part—building the parser engine—so you can focus on language design.
+
+---
+
