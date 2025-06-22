@@ -1,0 +1,43 @@
+## 🌐  What is a Translator?
+
+---
+
+### 📘 **Definition:**
+
+> A **translator** in computer science is a **program that converts code written in one programming language into another language**—typically from a high-level language to machine code, or between different high-level languages.
+
+---
+
+### 🔄 **Purpose of a Translator:**
+
+* To make code **understandable by the machine**.
+* To **bridge different programming environments**.
+* To enable **cross-platform compatibility**.
+
+---
+
+### 🧩 **Types of Translators:**
+
+| Type            | Description                                                               | Example                     |
+| --------------- | ------------------------------------------------------------------------- | --------------------------- |
+| **Compiler**    | Converts high-level code into machine code **all at once**                | `C` → Machine Code          |
+| **Interpreter** | Translates and executes code **line-by-line**                             | `Python`, `JavaScript`      |
+| **Assembler**   | Converts **assembly language** into machine code                          | `MOV A, B` → `01010101`     |
+| **Decompiler**  | Converts machine code **back into high-level code** (reverse engineering) | `010101` → `int a = 5;`     |
+| **Transpiler**  | Converts code from **one high-level language to another**                 | `TypeScript` → `JavaScript` |
+
+---
+
+### ✅ **Key Characteristics of a Translator:**
+
+* Handles **syntax rules** and **semantic meanings**.
+* May **optimize** code during translation.
+* Helps in **cross-platform development** and **language interoperability**.
+
+---
+
+### 🧠 **In Simple Words:**
+
+> A **translator** is like a **language interpreter** between a programmer and a computer. It makes sure the program you write in human-readable language is turned into a format the machine can understand or another language can use.
+
+---
