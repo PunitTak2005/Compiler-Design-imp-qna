@@ -1,0 +1,57 @@
+## 🔍 4. What is Lexical Analyzer?
+
+A **lexical analyzer**, also known as a **lexer** or **scanner**, is the **first phase of a compiler**.
+It reads the source code **character by character** and **groups them into meaningful sequences called *tokens***.
+
+---
+
+### 📌 **Definition:**
+
+> A **lexical analyzer** is a program that converts a stream of characters from source code into a stream of **tokens**, which are the meaningful building blocks of the language (like keywords, identifiers, operators, literals, etc.).
+
+---
+
+### 🧩 **Main Functions of Lexical Analyzer:**
+
+| Function                             | Description                                                |
+| ------------------------------------ | ---------------------------------------------------------- |
+| **Tokenization**                     | Breaks input into tokens (e.g., `if`, `x`, `=`, `10`, `;`) |
+| **Removing Whitespace and Comments** | Ignores irrelevant characters                              |
+| **Error Detection**                  | Catches lexical errors like invalid symbols                |
+| **Symbol Table Management**          | Adds identifiers and constants to a symbol table           |
+| **Communicates with Parser**         | Passes tokens to the syntax analyzer for parsing           |
+
+---
+
+### 🧱 **Examples of Tokens:**
+
+| Code  | Token       |
+| ----- | ----------- |
+| `int` | Keyword     |
+| `x`   | Identifier  |
+| `=`   | Operator    |
+| `100` | Constant    |
+| `;`   | Punctuation |
+
+---
+
+### 🔄 Example Process:
+
+For code:
+
+```c
+int x = 100;
+```
+
+Lexical analyzer outputs:
+→ `[int] [x] [=] [100] [;]`
+
+---
+
+### 🧠 In Simple Words:
+
+> The **lexical analyzer** is like the “word recognizer” in a language – it reads raw text and identifies **valid words** (tokens) that the next stage (syntax analyzer) can understand.
+
+---
+
+
