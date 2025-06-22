@@ -1,0 +1,78 @@
+## 🔁 9. Definitions: Finite Automata and Regular Expression
+
+---
+
+### 📘 **1. Finite Automata (FA)**
+
+A **Finite Automaton** is a **mathematical model of a machine** that reads a string of symbols and **determines if it belongs to a particular language**.
+
+---
+
+### ✅ **Definition:**
+
+> A **Finite Automaton** is an abstract machine used to recognize **regular languages**. It consists of a finite number of states, transitions between those states, and rules for accepting or rejecting input strings.
+
+---
+
+### 🧩 **Components of Finite Automata:**
+
+A finite automaton is a 5-tuple:
+**FA = (Q, Σ, δ, q₀, F)**
+Where:
+
+* `Q` = Set of all **states**
+* `Σ` = **Input alphabet** (set of symbols)
+* `δ` = **Transition function** (δ: Q × Σ → Q)
+* `q₀` = **Start state**
+* `F` = **Set of accepting (final) states**
+
+---
+
+### 🔄 **Types of Finite Automata:**
+
+| Type                                        | Description                                         |
+| ------------------------------------------- | --------------------------------------------------- |
+| **DFA (Deterministic Finite Automaton)**    | Exactly one transition for each symbol from a state |
+| **NFA (Nondeterministic Finite Automaton)** | Can have multiple or no transitions for a symbol    |
+
+---
+
+### 📘 **2. Regular Expression (RE)**
+
+A **Regular Expression** is a **symbolic notation** used to describe patterns in strings, especially those that belong to **regular languages**.
+
+---
+
+### ✅ **Definition:**
+
+> A **regular expression** is a sequence of characters that defines a **search pattern** or **string-matching rule**. It is used to specify regular languages which can be recognized by finite automata.
+
+---
+
+### 🔤 **Basic Regular Expression Symbols:**
+
+| Symbol | Meaning                                 |                                                           |
+| ------ | --------------------------------------- | --------------------------------------------------------- |
+| `a`    | Matches the character 'a'               |                                                           |
+| \`a    | b\`                                     | Matches either 'a' or 'b'                                 |
+| `ab`   | Matches 'a' followed by 'b'             |                                                           |
+| `a*`   | Matches zero or more occurrences of 'a' |                                                           |
+| \`(a   | b)\*\`                                  | Matches any string of a’s and b’s, including empty string |
+
+---
+
+### 🔁 **Relationship between FA and RE:**
+
+* Every **regular expression** can be converted to a **finite automaton**.
+* Every **finite automaton** recognizes a language that can be described by a **regular expression**.
+
+---
+
+### 🧠 **In Simple Words:**
+
+* **Finite Automaton**: A machine that accepts or rejects strings by moving through states.
+* **Regular Expression**: A formula or pattern that defines which strings are valid.
+
+---
+
+
