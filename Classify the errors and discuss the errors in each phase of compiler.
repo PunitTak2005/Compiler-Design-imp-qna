@@ -1,0 +1,137 @@
+## 🧠 . Classification of Errors in Each Phase of Compiler
+
+A **compiler** processes code through several phases, and **each phase may produce different types of errors**. Understanding these errors helps in better debugging and writing correct code.
+
+---
+
+### 📚 **Main Categories of Errors:**
+
+| Error Type                   | Detected In                      | Description                                    |
+| ---------------------------- | -------------------------------- | ---------------------------------------------- |
+| **Lexical Errors**           | Lexical Analysis                 | Invalid characters, malformed tokens           |
+| **Syntax Errors**            | Syntax Analysis                  | Violations of grammar rules                    |
+| **Semantic Errors**          | Semantic Analysis                | Meaning-related issues like type mismatches    |
+| **Intermediate Code Errors** | Intermediate Code Generation     | Errors in temporary representation             |
+| **Optimization Errors**      | Code Optimization                | Inefficient or invalid optimization strategies |
+| **Code Generation Errors**   | Code Generation                  | Incorrect machine code or illegal instructions |
+| **Runtime Errors**           | Program Execution (Not compiler) | Issues like divide by zero, null pointer, etc. |
+
+---
+
+## 🔍 **Detailed Errors in Each Phase:**
+
+---
+
+### 1. **Lexical Analysis Errors (Scanner)**
+
+**Detected When**: Breaking source code into tokens.
+
+🛑 **Examples**:
+
+* Invalid symbols (`#`, `@`, `!` in C)
+* Misspelled keywords: `intt` instead of `int`
+* Unclosed strings: `"Hello`
+
+✅ **Handled by**: Skipping character and printing a lexical error message.
+
+---
+
+### 2. **Syntax Analysis Errors (Parser)**
+
+**Detected When**: Checking grammar and structure.
+
+🛑 **Examples**:
+
+* Missing semicolon: `int x = 10`
+* Unmatched brackets: `if (x > 0 {`
+* Wrong order: `= x 10`
+
+✅ **Handled by**: Error recovery techniques like **panic mode**, **phrase-level recovery**, or **YACC’s error token**.
+
+---
+
+### 3. **Semantic Analysis Errors**
+
+**Detected When**: Verifying meaning and context.
+
+🛑 **Examples**:
+
+* Undeclared variable: `x = 5;` without declaration
+* Type mismatch: `int x = "abc";`
+* Function mismatch: Calling with wrong number of arguments
+
+✅ **Handled by**: Semantic analyzer with type checking and symbol table validation.
+
+---
+
+### 4. **Intermediate Code Generation Errors**
+
+**Detected When**: Generating intermediate representation.
+
+🛑 **Examples**:
+
+* Invalid temporary variable references
+* Missing operator mapping
+* Broken control flow due to incorrect tree traversal
+
+✅ **Handled by**: Ensuring consistent IR rules and symbol mapping.
+
+---
+
+### 5. **Code Optimization Errors**
+
+**Detected When**: Improving IR for performance.
+
+🛑 **Examples**:
+
+* Removing code that’s actually used (dead code elimination gone wrong)
+* Incorrect constant folding
+* Loop transformation affecting logic
+
+✅ **Handled by**: Conservative optimization — do not alter program semantics.
+
+---
+
+### 6. **Code Generation Errors**
+
+**Detected When**: Converting IR to machine code.
+
+🛑 **Examples**:
+
+* Invalid instruction for target architecture
+* Unmapped variables/registers
+* Memory overflow or incorrect stack frame
+
+✅ **Handled by**: Instruction verification and testing.
+
+---
+
+### 7. **Runtime Errors (Post-compilation)**
+
+**Detected When**: Executing compiled program.
+
+🛑 **Examples**:
+
+* Division by zero
+* Array index out of bounds
+* Null pointer dereference
+
+✅ **Handled by**: Inserting runtime checks or using exception handling (language dependent).
+
+---
+
+## ✅ **Summary Table:**
+
+| Compiler Phase             | Common Errors                                       |
+| -------------------------- | --------------------------------------------------- |
+| Lexical Analysis           | Illegal tokens, unrecognized symbols                |
+| Syntax Analysis            | Missing brackets, semicolons, malformed expressions |
+| Semantic Analysis          | Type mismatches, undeclared variables               |
+| Intermediate Code          | Broken control flow, invalid temp usage             |
+| Code Optimization          | Incorrect or over-aggressive optimizations          |
+| Code Generation            | Bad instruction formats, register errors            |
+| Runtime (Post-Compilation) | Logical errors, divide by zero, memory issues       |
+
+---
+
+
