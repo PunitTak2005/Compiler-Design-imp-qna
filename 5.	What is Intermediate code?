@@ -1,0 +1,59 @@
+## 🛠️ 5. What is Intermediate Code?
+
+**Intermediate code** is a type of **code generated between the source code and machine code** during the compilation process. It is **not specific to any machine or CPU architecture**, but it is closer to machine code than the high-level source code.
+
+---
+
+### 📘 **Definition:**
+
+> **Intermediate code** is a **representation of a program** that is generated after syntax and semantic analysis, and before final machine code generation. It acts as a **bridge** between source code and target code.
+
+---
+
+### 🔄 **Compiler Flow with Intermediate Code:**
+
+```
+Source Code (e.g., C)
+        ↓
+Lexical + Syntax Analysis
+        ↓
+Intermediate Code ← 🧠 You are here
+        ↓
+Code Optimization
+        ↓
+Target Machine Code
+```
+
+---
+
+### 🎯 **Purpose of Intermediate Code:**
+
+1. **Portability**
+
+   * Makes it easier to retarget the compiler to different architectures.
+2. **Optimization**
+
+   * Simplifies optimization before generating final machine code.
+3. **Simplicity**
+
+   * Provides a clean and consistent structure for further compilation phases.
+
+---
+
+### 📂 **Types of Intermediate Code Representations:**
+
+| Format                       | Example                       |
+| ---------------------------- | ----------------------------- |
+| **Three Address Code (TAC)** | `t1 = a + b`                  |
+| **Postfix Notation**         | `ab+`                         |
+| **Syntax Trees / DAGs**      | Tree representing `a + b * c` |
+| **Bytecode**                 | Java bytecode for the JVM     |
+
+---
+
+### 🧠 **In Simple Words:**
+
+> Intermediate code is like a **rough draft** of your program that the compiler uses to make optimizations and translate into the final machine instructions.
+
+---
+
