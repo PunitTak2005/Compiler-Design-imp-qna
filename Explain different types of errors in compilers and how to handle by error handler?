@@ -1,0 +1,92 @@
+## 🛠️ 8. Types of Errors in Compilers and Error Handling
+
+In the process of compiling a program, **errors** can occur at various stages. A good compiler should be able to **detect**, **report**, and sometimes **recover** from these errors using an **error handler**.
+
+---
+
+## 📚 Types of Errors in Compilers:
+
+### 1. **Lexical Errors**
+
+* 🔹 **Stage**: During lexical analysis.
+* 🔹 **Cause**: Invalid tokens or characters (e.g., `@x = 10;`).
+* 🔹 **Handled by**: **Lexical analyzer**.
+* 🔹 **Example**: Use of illegal characters not defined in the language.
+
+**Handling Strategy:**
+
+* Skip the invalid character.
+* Issue a warning like `"Invalid character '@' ignored"` and continue.
+
+---
+
+### 2. **Syntax Errors**
+
+* 🔹 **Stage**: During syntax analysis.
+* 🔹 **Cause**: Violation of grammar rules (e.g., missing semicolon, unbalanced parentheses).
+* 🔹 **Handled by**: **Syntax analyzer (parser)**.
+* 🔹 **Example**: `if (x > 0) x = x + 1`  ← missing semicolon.
+
+**Handling Strategy:**
+
+* Use techniques like **panic mode**, **phrase level recovery**, or **YACC’s `error` token**.
+* Attempt to resume parsing to find more errors.
+
+---
+
+### 3. **Semantic Errors**
+
+* 🔹 **Stage**: During semantic analysis.
+* 🔹 **Cause**: Meaning is incorrect even if syntax is correct (e.g., type mismatches, undeclared variables).
+* 🔹 **Handled by**: **Semantic analyzer**.
+* 🔹 **Example**: `x = "Hello" - 3;`  ← invalid operation.
+
+**Handling Strategy:**
+
+* Report detailed messages: `"Cannot subtract integer from string."`
+* Mark the expression as invalid but allow compilation to continue.
+
+---
+
+### 4. **Logical Errors**
+
+* 🔹 **Stage**: At runtime or through testing (not strictly compiler errors).
+* 🔹 **Cause**: Program runs but gives wrong results.
+* 🔹 **Example**: Using `<=` instead of `<` in a loop condition.
+
+**Handling Strategy:**
+
+* Detected during debugging or static analysis, not by the compiler directly.
+
+---
+
+### 5. **Runtime Errors**
+
+* 🔹 **Stage**: At program execution.
+* 🔹 **Cause**: Division by zero, null pointer dereferencing, etc.
+* 🔹 **Example**: `int a = 5 / 0;`
+
+**Handling Strategy:**
+
+* Insert **runtime checks** during code generation.
+* Use exception handling if the language supports it.
+
+---
+
+## 🧰 Error Recovery Techniques Used by Error Handlers:
+
+| Technique                 | Description                                                         | When Used                          |
+| ------------------------- | ------------------------------------------------------------------- | ---------------------------------- |
+| **Panic Mode Recovery**   | Skip tokens until a synchronizing token (like `;` or `}`) is found. | Simple and fast                    |
+| **Phrase Level Recovery** | Attempt local corrections (e.g., insert a missing semicolon).       | More complex                       |
+| **Error Productions**     | Extend grammar to anticipate common errors.                         | Used in YACC                       |
+| **Global Correction**     | Tries to find minimal changes to fix the input.                     | Expensive, rarely used in practice |
+
+---
+
+### 🧠 In Simple Words:
+
+> Compilers face different types of errors at each stage. An **error handler** helps to identify, report, and in many cases **recover** from these errors so that the compiler can continue processing and provide more feedback to the programmer.
+
+---
+
