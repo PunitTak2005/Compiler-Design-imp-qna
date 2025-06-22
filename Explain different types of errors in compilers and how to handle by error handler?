@@ -1,4 +1,4 @@
-## 🛠️ 8. Types of Errors in Compilers and Error Handling
+## 🛠️  Types of Errors in Compilers and Error Handling
 
 In the process of compiling a program, **errors** can occur at various stages. A good compiler should be able to **detect**, **report**, and sometimes **recover** from these errors using an **error handler**.
 
