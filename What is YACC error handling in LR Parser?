@@ -1,4 +1,4 @@
-## ⚠️ 7. What is YACC Error Handling in LR Parser?
+## ⚠️ . What is YACC Error Handling in LR Parser?
 
 **YACC** (Yet Another Compiler Compiler) is a parser generator that creates an **LR parser** for a given grammar.
 **Error handling** in YACC allows the parser to **recover gracefully from syntax errors** instead of stopping immediately.
