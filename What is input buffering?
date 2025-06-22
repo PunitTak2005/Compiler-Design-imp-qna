@@ -1,0 +1,58 @@
+## 💾 6. What is Input Buffering?
+
+**Input buffering** is a technique used in the **lexical analysis phase** of a compiler to **speed up reading characters** from the source code file.
+Instead of reading one character at a time from disk (which is slow), the input is **loaded in blocks (buffers)** into memory for efficient access.
+
+---
+
+### 📘 **Definition:**
+
+> **Input buffering** is the process of using **memory buffers** to store portions of source code so that the lexical analyzer can read characters efficiently without frequent disk access.
+
+---
+
+### ⚙️ **Why is Input Buffering Needed?**
+
+* Disk I/O is **slow**.
+* Reading one character at a time causes performance bottlenecks.
+* Buffers allow **fast, sequential access** to characters in memory.
+
+---
+
+### 📚 **Common Buffering Techniques:**
+
+#### 🔹 1. **Single Buffering:**
+
+* One buffer holds a block of characters.
+* Slower because it needs to reload the buffer each time it's exhausted.
+
+#### 🔹 2. **Double Buffering (Most Common):**
+
+* Uses **two buffers** of equal size.
+* While one buffer is being processed, the other can be refilled from the source file.
+* Uses **forward and lexemeBegin pointers** to track reading positions.
+
+```
+|---- Buffer 1 ----|---- Buffer 2 ----|
+^lexemeBegin      ^forward
+
+```
+
+* When `forward` reaches the end of one buffer, it jumps to the next.
+
+---
+
+### 🧠 **In Simple Words:**
+
+> Input buffering is like reading a full page from a book instead of one letter at a time. It helps the lexer move faster by minimizing time-consuming file reads.
+
+---
+
+### ✅ **Benefits:**
+
+* Faster lexical analysis.
+* Reduced disk access.
+* Smooth handling of large source files.
+
+---
+
