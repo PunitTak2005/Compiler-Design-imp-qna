@@ -6,7 +6,6 @@ This repository contains **frequently asked important questions and answers** fo
 - Phases of Compiler with Examples
 - Lex and YACC Usage
 - Symbol Table and Scoping
-- NFA/DFA Construction
 - Intermediate Code Generation
 - Syntax & Semantic Analysis
 - Error Types and Handling
@@ -15,8 +14,6 @@ This repository contains **frequently asked important questions and answers** fo
 📁 What's Included:
 - 🔹 Short notes
 - 🔹 One-liner definitions
-- 🔹 Diagram-based answers (NFA, Parse Trees, etc.)
-- 🔹 MCQ-based topics (coming soon)
 - 🔹 Viva Questions with concise explanations
 
 🛠️ Ideal for:
