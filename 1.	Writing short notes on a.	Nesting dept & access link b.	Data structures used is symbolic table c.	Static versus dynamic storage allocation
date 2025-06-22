@@ -1,0 +1,60 @@
+
+## 📝 1. Short Notes
+
+---
+
+### **a. Nesting Depth & Access Link**
+
+#### 📌 **Nesting Depth**:
+
+* It refers to the **level of nested blocks or procedures** inside each other.
+* In a programming language with nested functions (like Pascal), nesting depth determines **how deeply a function is declared inside another**.
+* Example:
+
+  ```pascal
+  procedure A;
+    procedure B;
+      procedure C;
+      begin ... end;
+    begin ... end;
+  begin ... end;
+  ```
+
+  * Here, `C` has a **nesting depth of 3**.
+
+#### 🔗 **Access Link**:
+
+* Used in **activation records (stack frames)** to access **non-local variables** in nested functions.
+* It is a **pointer to the activation record of the closest enclosing scope**.
+* Helps in resolving variables in **lexical scoping**.
+
+---
+
+### **b. Data Structures Used in Symbol Table**
+
+Symbol tables store information about variables, functions, etc. The efficiency of operations like insertion and lookup depends on the data structure used.
+
+#### Common Data Structures:
+
+| Data Structure               | Description                                                                                 |
+| ---------------------------- | ------------------------------------------------------------------------------------------- |
+| **Linear List**              | Simple array or linked list. Easy to implement but slow (O(n) lookup).                      |
+| **Hash Table**               | Most commonly used. Offers fast lookup, insertion, and deletion (O(1) on average).          |
+| **Binary Search Tree (BST)** | Good for ordered entries. Balanced trees (like AVL) maintain O(log n) time.                 |
+| **Trie (Prefix Tree)**       | Used for fast lookup of strings (especially in compilers/interpreters for large languages). |
+
+---
+
+### **c. Static vs Dynamic Storage Allocation**
+
+| Feature               | **Static Allocation**                   | **Dynamic Allocation**                            |
+| --------------------- | --------------------------------------- | ------------------------------------------------- |
+| **Definition**        | Memory is allocated at **compile time** | Memory is allocated at **runtime**                |
+| **Fixed/Variable**    | Fixed size and location                 | Varies depending on program execution             |
+| **Examples**          | Global variables, static arrays         | Heap allocation, stack-based local variables      |
+| **Memory Efficiency** | High, but may waste space               | More efficient use but can lead to fragmentation  |
+| **Flexibility**       | Less flexible                           | Highly flexible (can allocate/deallocate anytime) |
+| **Speed**             | Faster access (known address)           | Slightly slower (lookup needed)                   |
+
+---
+
